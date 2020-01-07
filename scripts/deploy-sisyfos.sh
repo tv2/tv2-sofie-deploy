@@ -16,8 +16,8 @@ HOSTNAME=$(hostname)
 sudo docker run --name=sisyfos \
 	-i \
 	--mount source=sisyfos-vol,target=/opt/sisyfos-audio-controller/storage \
-	-e loggerIp='0.0.0.0' \
-	-e loggerPort=9200 \
+	-e loggerIp=$ELASTIC_IP \
+	-e loggerPort=$ELASTIC_PORT \
 	--network="host" \
 	--restart always \
 	-t \

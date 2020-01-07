@@ -21,7 +21,7 @@ sudo docker run --name=server-core \
 	-p 127.0.0.1:8080:80/tcp \
 	--restart always -d \
 	-v /opt/coredisk:/opt/coredisk \
-	-e TZ=Europe/Copenhagem \
+	-e TZ=Europe/Copenhagen \
 	-e 'MONGO_OPLOG_URL=mongodb://mongo:27017/local' \
 	-e 'MONGO_URL=mongodb://mongo:27017/sofie' \
 	-e "ROOT_URL=http://$HOSTNAME" \

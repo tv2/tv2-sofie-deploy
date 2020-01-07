@@ -21,7 +21,7 @@ sudo docker run --name=playout-gateway \
 	-e 'CORE_HOST=server-core' \
 	-e 'CORE_PORT=80' \
 	-e "DEVICE_ID=$HOSTNAME" \
-	-e 'DEVICE_TOKEN=XXXXXXXXXXXXXXXX' \
+	-e "DEVICE_TOKEN=$DEVICE_TOKEN" \
 	olzzon/tv-automation-playout-gateway:$TAG
 if [ $? -ne 0 ]; then
         echo "Failed to run new image. Playout-gateway is likely not running"

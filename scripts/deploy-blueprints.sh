@@ -25,5 +25,5 @@ sudo docker run --rm -it \
         -v $PWD:/src \
         -v $HOME/.npm:/home/node/.npm \
         -v $HOME/.cache/yarn:/home/node/.cache/yarn \
-        -e 'HTTP_PROXY=http://xxx.xxx.local:8080' \
-        node:8 bash -c "yarn && HTTP_PROXY= yarn $BUILD_COMMAND --env.server=\"http://xx.xx.xx.xx\""
+        -e "HTTP_PROXY=http://$HTTP_PROXY:8080" \
+        node:8 bash -c "yarn && HTTP_PROXY= yarn $BUILD_COMMAND --env.server=\"http://$ENV_SERVER\""
