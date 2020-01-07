@@ -3,7 +3,7 @@ Deployment scripts for Sofie Automation System on Linux.
 
 
 All assets: tv2-sofie-deploy
-- Remaining tasks
+### Remaining tasks:
 - Blueprints deployment
 - Httpproxy for core to webhook slack?
 - Core ntp servers?
@@ -36,20 +36,27 @@ rs.initiate()
 exit
 exit
 ```
-Run images
+### Edit private settings:
+```
+cd scripts
+cp set-environment_EXAMPLE.sh set-environment.sh
+nano set-environment.sh
+./set-environment.sh
+```
+### Run images:
 ```
 sudo bash deploy-core.sh
 sudo bash deploy-playout-gateway.sh
 sudo bash deploy-inews-gateway.sh
 sudo bash deploy-sisyfos.sh
 ```
-Deploy blueprints
+### Deploy blueprints:
 TODO
-Install nginx
+### Install nginx:
 ````
 sudo apt-get install nginx
 ````
-Configure nginx
+### Configure nginx:
 TODO - this may need more tweaking
 ```
 sudo cp nginx.conf /etc/nginx/
