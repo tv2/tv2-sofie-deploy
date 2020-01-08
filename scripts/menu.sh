@@ -23,21 +23,25 @@ do
             echo "Starting $REPLY"
             echo "Deploying Core :"
             sudo bash deploy-core.sh
+            break
             ;;
         "Deploy iNewsGateway")
             echo "Starting $REPLY"
             echo "Deploying iNews Gateway :"
             sudo bash deploy-inews-gateway.sh
+            break
             ;;
         "Deploy Playout Gateway")
             echo "Deploying Playout Gateway :"
             echo "Starting $REPLY"
 			sudo bash deploy-playout-gateway.sh
+            break
             ;;
 		"Deploy Sisyfos")
             echo "Starting $REPLY"
             echo "Deploying Sisyfos :"
             sudo bash deploy-sisyfos.sh
+            break
             ;;
         "Quit")
             echo "Quit menu.sh"
@@ -46,3 +50,5 @@ do
         *) echo "invalid option $REPLY";;
     esac
 done
+
+echo "Finished operation"
