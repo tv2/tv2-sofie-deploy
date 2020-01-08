@@ -8,46 +8,46 @@ do
         "Deploy All")
 			echo "Starting $REPLY"
             echo "Deploying Core :"
-            sudo bash deploy-core.sh
+            sudo -E bash deploy-core.sh
             echo "Deploying Playout Gateway :"
-			sudo bash deploy-playout-gateway.sh
+			sudo -E bash deploy-playout-gateway.sh
             echo "Deploying iNews Gateway :"
-			sudo bash deploy-inews-gateway.sh
+			sudo -E bash deploy-inews-gateway.sh
             echo "Deploying Blueprints :"
-			sudo bash deploy-blueprints.sh
+			sudo -E bash deploy-blueprints.sh
             echo "Deploying Sisyfos :"
-			sudo bash deploy-sisyfos.sh
+			sudo -E bash deploy-sisyfos.sh
             echo "Sofie Deployed - check status by open browser http://core.machine.ip:3000"
             break
             ;;
 		"Deploy Core")
             echo "Starting $REPLY"
             echo "Deploying Core :"
-            sudo bash deploy-core.sh
+            sudo -E bash deploy-core.sh
             break
             ;;
         "Deploy iNewsGateway")
             echo "Starting $REPLY"
             echo "Deploying iNews Gateway :"
-            sudo bash deploy-inews-gateway.sh
+            sudo -E bash deploy-inews-gateway.sh
             break
             ;;
         "Deploy Playout Gateway")
             echo "Deploying Playout Gateway :"
             echo "Starting $REPLY"
-			sudo bash deploy-playout-gateway.sh
+			sudo -E bash deploy-playout-gateway.sh
             break
             ;;
         "Deploy Blueprints")
             echo "Starting $REPLY"
             echo "Deploying Blueprints :"
-            sudo bash deploy-blueprints.sh
+            sudo -E bash deploy-blueprints.sh
             break
             ;;
 		"Deploy Sisyfos")
             echo "Starting $REPLY"
             echo "Deploying Sisyfos :"
-            sudo bash deploy-sisyfos.sh
+            sudo -E bash deploy-sisyfos.sh
             break
             ;;
         "Quit")
