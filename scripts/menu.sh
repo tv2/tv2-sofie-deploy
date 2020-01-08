@@ -41,7 +41,7 @@ do
         "Deploy Blueprints")
             echo "Starting $REPLY"
             echo "Deploying Blueprints :"
-            sudo bash deploy-sisyfos.sh
+            sudo bash deploy-blueprints.sh
             break
             ;;
 		"Deploy Sisyfos")
