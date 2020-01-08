@@ -15,7 +15,7 @@ sudo docker rm playout-gateway
 
 HOSTNAME=$(hostname)
 sudo docker run --name=playout-gateway \
-	--network=sofie \
+	--network=$NETWORK_NAME \
 	--restart always -d \
 	-e TZ=Europe/Copenhagen \
 	-e 'CORE_HOST=server-core' \

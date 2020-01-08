@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# For all containers:
+export NETWORK_NAME=sofie
 # For Playout and iNews gateways:
 export DEVICE_TOKEN=XXXXXXXXXXXXXXXX
 # For iNews gateway:

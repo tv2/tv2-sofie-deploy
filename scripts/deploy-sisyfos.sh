@@ -17,7 +17,7 @@ sudo docker run --name=sisyfos \
 	--mount source=sisyfos-vol,target=/opt/sisyfos-audio-controller/storage \
 	-e loggerIp=$ELASTIC_IP \
 	-e loggerPort=$ELASTIC_PORT \
-	--network="host" \
+	--network=$NETWORK_NAME \
 	--restart always -d \
 	olzzon/sisyfos-audio-controller:$TAG
 if [ $? -ne 0 ]; then

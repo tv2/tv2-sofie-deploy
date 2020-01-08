@@ -15,7 +15,7 @@ sudo docker rm inews-gateway
 
 HOSTNAME=$(hostname)
 sudo docker run --name=inews-gateway \
-	--network=sofie \
+	--network=$NETWORK_NAME \
 	--restart always -d \
 	-e TZ=Europe/Copenhagen \
 	-e 'CORE_HOST=server-core' \

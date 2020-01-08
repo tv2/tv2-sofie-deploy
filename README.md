@@ -11,7 +11,15 @@ All assets: tv2-sofie-deploy
 - Nginx ssl?
 
     
-### Steps
+## Steps:
+
+### Edit private and machine dependend settings:
+```
+cd scripts
+cp set-environment_EXAMPLE.sh set-environment.sh
+nano set-environment.sh
+./set-environment.sh
+```
 Install docker
 ```
 https://docs.docker.com/install/linux/docker-ce/ubuntu/
@@ -26,7 +34,7 @@ sudo docker network create sofie
 ```
 Run mongo
 ```
-sudo docker run -d --restart=always --network=sofie --hostname=mongodb -v /opt/mongo/db:/data/db -v /opt/mongo/backup:/data/backup -v /etc/timezone:/etc/timezone:ro -p 127.0.0.1:27017:27017 --name mongo mongo:3.4 --replSet rs0
+sudo docker run -d --restart=always --network=$NETWORK_NAME --hostname=mongodb -v /opt/mongo/db:/data/db -v /opt/mongo/backup:/data/backup -v /etc/timezone:/etc/timezone:ro -p 127.0.0.1:27017:27017 --name mongo mongo:3.4 --replSet rs0
 ```
 Configure mongo replicaset
 ```
@@ -36,13 +44,7 @@ rs.initiate()
 exit
 exit
 ```
-### Edit private settings:
-```
-cd scripts
-cp set-environment_EXAMPLE.sh set-environment.sh
-nano set-environment.sh
-./set-environment.sh
-```
+
 ### Run images:
 ```
 sudo bash deploy-core.sh

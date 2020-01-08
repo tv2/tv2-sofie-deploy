@@ -17,7 +17,7 @@ sudo docker rm server-core
 
 HOSTNAME=$(hostname)
 sudo docker run --name=server-core \
-	--network=sofie \
+	--network=$NETWORK_NAME \
 	-p 127.0.0.1:8080:80/tcp \
 	--restart always -d \
 	-v /opt/coredisk:/opt/coredisk \
