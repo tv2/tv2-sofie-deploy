@@ -8,28 +8,39 @@ do
     case $opt in
         "Deploy All")
 			echo "Starting $REPLY"
+            echo "Deploying Core :"
             sudo bash deploy-core.sh
+            echo "Deploying Playout Gateway :"
 			sudo bash deploy-playout-gateway.sh
+            echo "Deploying iNews Gateway :"
 			sudo bash deploy-inews-gateway.sh
+            echo "Deploying Sisyfos :"
 			sudo bash deploy-sisyfos.sh
+            echo "Sofie Deployed - check status by open browser http://core.machine.ip:3000"
+            break
             ;;
 		"Deploy Core")
             echo "Starting $REPLY"
+            echo "Deploying Core :"
             sudo bash deploy-core.sh
             ;;
         "Deploy iNewsGateway")
             echo "Starting $REPLY"
+            echo "Deploying iNews Gateway :"
             sudo bash deploy-inews-gateway.sh
             ;;
         "Deploy Playout Gateway")
+            echo "Deploying Playout Gateway :"
             echo "Starting $REPLY"
 			sudo bash deploy-playout-gateway.sh
             ;;
 		"Deploy Sisyfos")
             echo "Starting $REPLY"
+            echo "Deploying Sisyfos :"
             sudo bash deploy-sisyfos.sh
             ;;
         "Quit")
+            echo "Quit menu.sh"
             break
             ;;
         *) echo "invalid option $REPLY";;
