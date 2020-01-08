@@ -34,7 +34,7 @@ sudo docker network create sofie
 ```
 Run mongo
 ```
-sudo docker run -d --restart=always --network=$NETWORK_NAME --hostname=mongodb -v /opt/mongo/db:/data/db -v /opt/mongo/backup:/data/backup -v /etc/timezone:/etc/timezone:ro -p 127.0.0.1:27017:27017 --name mongo mongo:3.4 --replSet rs0
+sudo -E docker run -d --restart=always --network=$NETWORK_NAME --hostname=mongodb -v /opt/mongo/db:/data/db -v /opt/mongo/backup:/data/backup -v /etc/timezone:/etc/timezone:ro -p 127.0.0.1:27017:27017 --name mongo mongo:3.4 --replSet rs0
 ```
 Configure mongo replicaset
 ```
@@ -45,13 +45,11 @@ exit
 exit
 ```
 
-### Run images:
+### Run menu:
 ```
-sudo bash deploy-core.sh
-sudo bash deploy-playout-gateway.sh
-sudo bash deploy-inews-gateway.sh
-sudo bash deploy-sisyfos.sh
+sudo -E bash menu.sh
 ```
+
 ### Deploy blueprints:
 TODO
 ### Install nginx:
