@@ -18,7 +18,7 @@ sudo docker run --name=sisyfos \
 	-e loggerIp=$ELASTIC_IP \
 	-e loggerPort=$ELASTIC_PORT \
 	--network="host" \
-	--restart always \
+	--restart always -d \
 	olzzon/sisyfos-audio-controller:$TAG
 if [ $? -ne 0 ]; then
         echo "Failed to run new image. Sisyfos is likely not running"
