@@ -18,25 +18,24 @@ All assets: tv2-sofie-deploy
 cd scripts
 cp set-environment_EXAMPLE.sh set-environment.sh
 nano set-environment.sh
-./set-environment.sh
 ```
-Install docker
+### Install docker
 ```
 https://docs.docker.com/install/linux/docker-ce/ubuntu/
 ```
-Setup docker proxy:
+### Setup docker proxy:
 ```
 https://docs.docker.com/engine/admin/systemd/ 
 ```
-Create docker virtual network
+### Create docker virtual network
 ```
 sudo docker network create sofie
 ```
-Run mongo
+### Run mongo
 ```
 sudo -E docker run -d --restart=always --network=$NETWORK_NAME --hostname=mongodb -v /opt/mongo/db:/data/db -v /opt/mongo/backup:/data/backup -v /etc/timezone:/etc/timezone:ro -p 127.0.0.1:27017:27017 --name mongo mongo:3.4 --replSet rs0
 ```
-Configure mongo replicaset
+### Configure mongo replicaset
 ```
 sudo docker exec -it mongo bash
 mongo

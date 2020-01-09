@@ -1,4 +1,5 @@
 #!/bin/bash
+source set-environment.sh
 
 cd tv2-sofie-blueprints-inews
 

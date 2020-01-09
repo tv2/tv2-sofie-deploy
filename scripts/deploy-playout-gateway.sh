@@ -1,4 +1,5 @@
 #!/bin/bash
+source set-environment.sh
 
 read -e -p "Tag to deploy: " -i "develop" TAG
 
