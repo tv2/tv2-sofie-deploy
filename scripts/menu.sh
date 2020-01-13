@@ -17,7 +17,7 @@ do
 			sudo bash deploy-blueprints.sh
             echo "Deploying Sisyfos :"
 			sudo bash deploy-sisyfos.sh
-            echo "Sofie Deployed - check status by open browser http://core.machine.ip:3000"
+            echo "Sofie Deployed - check status by open browser http://this.machines.ip (web port 80)"
             break
             ;;
 		"Deploy Core")
