@@ -44,13 +44,16 @@ exit
 exit
 ```
 
-### Run menu:
-```
-sudo -E bash menu.sh
-```
 
-### Deploy blueprints:
-TODO
+### Setup blueprints deployment:
+```
+cd scripts
+git clone https://github.com/olzzon/tv2-sofie-blueprints-inews.git
+cd tv2-sofie-blueprints-inews
+yarn
+```
+Deploy the blueprints from the deployment scriptmenu. (later in this README.md)
+
 ### Install nginx:
 ````
 sudo apt-get install nginx
@@ -59,4 +62,9 @@ sudo apt-get install nginx
 TODO - this may need more tweaking
 ```
 sudo cp nginx.conf /etc/nginx/
+```
+
+### Deploy scripts with menu:
+```
+sudo -E bash menu.sh
 ```
