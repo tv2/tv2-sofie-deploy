@@ -8,6 +8,7 @@ Deployment scripts for Sofie Automation System on Linux.
 cd scripts
 cp set-environment_EXAMPLE.sh set-environment.sh
 nano set-environment.sh
+./set-environment.sh
 ```
 ### Install docker
 https://docs.docker.com/install/linux/docker-ce/ubuntu/
