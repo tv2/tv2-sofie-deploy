@@ -12,8 +12,6 @@ fi
 sudo docker stop playout-gateway
 sudo docker rm playout-gateway
 
-# TODO - kibana
-
 HOSTNAME=$(hostname)
 sudo docker run --name=playout-gateway \
 	--network=$NETWORK_NAME \

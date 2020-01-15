@@ -14,7 +14,6 @@ sudo docker rm server-core
 
 # TODO - slack webhooks probably need the proxy?
 # TODO - NTP Servers?
-# TODO - kibana
 
 HOSTNAME=$(hostname)
 sudo docker run --name=server-core \
@@ -22,12 +21,12 @@ sudo docker run --name=server-core \
 	-p 127.0.0.1:8080:80/tcp \
 	--restart always -d \
 	-v /opt/coredisk:/opt/coredisk \
-	-e TZ=Europe/Copenhagen \
+	-e 'TZ=$TIMEZONE' \
 	-e 'MONGO_OPLOG_URL=mongodb://mongo:27017/local' \
 	-e 'MONGO_URL=mongodb://mongo:27017/sofie' \
 	-e "ROOT_URL=http://$HOSTNAME" \
 	-e 'PORT=80' \
-	-e 'HTTP_FORWARDED_CONT=1' \
+	-e 'HTTP_FORWARDED_COUNT=1' \
 	olzzon/tv-automation-server-core:$TAG
 if [ $? -ne 0 ]; then
         echo "Failed to run new image. Sofie is likely not running"

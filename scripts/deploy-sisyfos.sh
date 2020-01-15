@@ -12,10 +12,10 @@ fi
 sudo docker stop sisyfos
 sudo docker rm sisyfos
 
-
 HOSTNAME=$(hostname)
 sudo docker run --name=sisyfos \
-	--mount source=sisyfos-vol,target=/opt/sisyfos-audio-controller/storage \
+	-v /opt/sisyfos-audio-controller:/opt/sisyfos-audio-controller/storage \
+	-e 'TZ=$TIMEZONE' \
 	-e loggerIp=$ELASTIC_IP \
 	-e loggerPort=$ELASTIC_PORT \
 	-p 1176:1176 \

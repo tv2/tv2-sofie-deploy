@@ -12,13 +12,11 @@ fi
 sudo docker stop inews-gateway
 sudo docker rm inews-gateway
 
-# TODO - kibana
-
 HOSTNAME=$(hostname)
 sudo docker run --name=inews-gateway \
 	--network=$NETWORK_NAME \
 	--restart always -d \
-	-e TZ=Europe/Copenhagen \
+	-e 'TZ=$TIMEZONE' \
 	-e 'CORE_HOST=server-core' \
 	-e 'CORE_PORT=80' \
 	-e "DEVICE_ID=$HOSTNAME" \
