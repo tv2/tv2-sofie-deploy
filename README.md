@@ -59,7 +59,7 @@ sudo service nginx reload
 
 ### Deploy scripts with menu:
 ```
-sudo bash menu.sh
+sudo ./menu.sh
 ```
 
 ## Future steps:
