@@ -3,6 +3,14 @@ Deployment scripts for Sofie Automation System on Linux.
 
 ## Steps:
 
+Install NodeJS and Yarn
+
+#### To install Yarn on ubuntu 18.04 see here:
+```
+https://linuxize.com/post/how-to-install-yarn-on-ubuntu-18-04/
+```
+
+
 ### Edit private and machine dependend settings:
 ```
 cd scripts
