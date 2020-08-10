@@ -27,4 +27,4 @@ sudo docker run --rm -it \
         -v $HOME/.npm:/home/node/.npm \
         -v $HOME/.cache/yarn:/home/node/.cache/yarn \
         -e "HTTP_PROXY=$HTTP_PROXY" \
-        node:8 bash -c "yarn && HTTP_PROXY= yarn $BUILD_COMMAND --env.server=\"http://$ENV_SERVER\""
+        node:12 bash -c "yarn && HTTP_PROXY= yarn $BUILD_COMMAND --env.server=\"http://$ENV_SERVER\""
