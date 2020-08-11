@@ -3,6 +3,7 @@
 # For all containers:
 export NETWORK_NAME=sofie
 export TIMEZONE=Europe/Copenhagen
+export NTP_SERVER=pool.ntp.org
 # For Playout and iNews gateways:
 export DEVICE_TOKEN=XXXXXXXXXXXXXXXX
 # For deploy blueprints:

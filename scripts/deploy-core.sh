@@ -26,7 +26,7 @@ sudo docker run --name=server-core \
 	-e 'MONGO_OPLOG_URL=mongodb://mongo:27017/local' \
 	-e 'MONGO_URL=mongodb://mongo:27017/sofie' \
 	-e "ROOT_URL=http://$HOSTNAME" \
-	-e 'NTP_SERVERS=ntp.tv2.local' \
+	-e "NTP_SERVERS=$NTP_SERVER" \
 	-e 'PORT=80' \
 	-e 'HTTP_FORWARDED_COUNT=1' \
 	olzzon/tv-automation-server-core:$TAG
