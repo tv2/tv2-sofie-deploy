@@ -35,11 +35,7 @@ sudo -E docker run -d --restart=always --network=sofie --hostname=mongodb -v /op
 ```
 ### Configure mongo replicaset
 ```
-sudo docker exec -it mongo bash
-mongo
-rs.initiate()
-exit
-exit
+sudo docker exec -it mongo mongo --eval "rs.initiate()"
 ```
 
 ### (Optional) Setup filebeat to log to kibana
