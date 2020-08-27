@@ -68,5 +68,4 @@ sudo ./menu.sh
 
 ## Future steps:
 - Httpproxy for core to webhook slack?
-- Core ntp servers?
 - Nginx ssl?

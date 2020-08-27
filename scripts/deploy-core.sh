@@ -13,7 +13,6 @@ sudo docker stop server-core
 sudo docker rm server-core
 
 # TODO - slack webhooks probably need the proxy?
-# TODO - NTP Servers?
 
 HOSTNAME=$(hostname)
 sudo docker run --name=server-core \
@@ -26,7 +25,7 @@ sudo docker run --name=server-core \
 	-e 'MONGO_OPLOG_URL=mongodb://mongo:27017/local' \
 	-e 'MONGO_URL=mongodb://mongo:27017/sofie' \
 	-e "ROOT_URL=http://$HOSTNAME" \
-	-e "NTP_SERVERS=$NTP_SERVER" \
+	-e "NTP_SERVERS=$NTP_SERVERS" \
 	-e 'PORT=80' \
 	-e 'HTTP_FORWARDED_COUNT=1' \
 	olzzon/tv-automation-server-core:$TAG
