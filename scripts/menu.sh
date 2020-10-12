@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PS3='Please enter your choice: '
-options=("Deploy All" "Deploy Core" "Deploy iNewsGateway" "Deploy Playout Gateway" "Deploy Sisyfos" "Deploy Blueprints" "Quit")
+options=("Deploy All" "Deploy Core" "Deploy iNewsGateway" "Deploy Playout Gateway" "Deploy Sisyfos" "Deploy Blueprints" "Deploy nginx" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -17,6 +17,8 @@ do
 			sudo bash deploy-blueprints.sh
             echo "Deploying Sisyfos :"
 			sudo bash deploy-sisyfos.sh
+            echo "Deploying nginx:"
+			sudo bash deploy-nginx.sh
             echo "Sofie Deployed - check status by open browser http://this.machines.ip (web port 80)"
             break
             ;;
@@ -48,6 +50,12 @@ do
             echo "Starting $REPLY"
             echo "Deploying Sisyfos :"
             sudo bash deploy-sisyfos.sh
+            break
+            ;;
+		"Deploy nginx")
+            echo "Starting $REPLY"
+            echo "Deploying nginx :"
+            sudo bash deploy-nginx.sh
             break
             ;;
         "Quit")
