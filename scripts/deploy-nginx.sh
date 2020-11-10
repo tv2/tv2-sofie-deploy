@@ -88,7 +88,7 @@ $httplisten
 	}
 END
 
-if [ "$IS_Q2" != "false" ]
+if [ "$IS_QBOX" != "false" ]
 then
 cat >> $nginxconf << END 
 
