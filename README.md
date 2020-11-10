@@ -55,11 +55,7 @@ yarn
 Deploy the blueprints from the deployment scriptmenu. (later in this README.md)
 
 ### Install nginx:
-```
-sudo apt-get install nginx
-sudo cp nginx.conf /etc/nginx/
-sudo service nginx reload
-```
+Deploy nginx from the deployment script menu. (later in this README.md)
 
 ### Deploy scripts with menu:
 ```
@@ -68,4 +64,3 @@ sudo ./menu.sh
 
 ## Future steps:
 - Httpproxy for core to webhook slack?
-- Nginx ssl?
