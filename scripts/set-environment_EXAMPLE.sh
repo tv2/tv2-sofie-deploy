@@ -19,7 +19,7 @@ export DISABLE_HTTP=false # (true/false) if users shoud be always redirected to 
 export SSL_CERTIFICATE= # eg. /home/user/certificate.cer
 export SSL_CERTIFICATE_KEY= # eg. /home/user/certificate.key
 export MEDIA_PREVIEW_URL= # eg. http://XX.XX.XX.XX:8000
+export SISYFOS_URL= # eg. http://localhost:1176 (if sisyfos deployed on the same machine as core), can be left empty
 # For nginx.conf QBox only
 export IS_QBOX=false # (true/false) set to true on a QBox
-export SISYFOS_URL= # eg. http://localhost:1176 (if sisyfos deployed on the same machine as core)
 export IMAGE_PROVIDER_URL= # eg. http://XX.XX.XX.XX:5255

@@ -88,7 +88,7 @@ $httplisten
 	}
 END
 
-if [ "$IS_QBOX" != "false" ]
+if [ ! -z "$SISYFOS_URL" ]
 then
 cat >> $nginxconf << END 
 
@@ -107,6 +107,12 @@ $httplisten
 			proxy_pass $SISYFOS_URL/;
 		}
 	}
+END
+fi
+
+if [ "$IS_QBOX" != "false" ]
+then
+cat >> $nginxconf << END 
 
 	server {
 $httplisten
