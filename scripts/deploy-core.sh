@@ -3,6 +3,27 @@ source set-environment.sh
 
 read -e -p "Tag to deploy: " -i "develop" TAG
 
+read -e -p "Deploy core-settings.json? [y/n] " -i "" DEPLOY_JSON
+
+if [[ $DEPLOY_JSON == y* ]] || [[ $DEPLOY_JSON == Y* ]]; then
+	echo "Which settings to copy?"
+	PS3='Please enter your choice: '
+	files=()
+	while IFS= read -r -d $'\0'; do
+		files+=("$REPLY")
+	done < <(find ../core-settings/ -type f -printf "%f\0")
+	select opt in "${files[@]}" ; do 
+		if (( REPLY > 0 && REPLY <= ${#files[@]} )) ; then
+    		sudo cp -f "../core-settings/$opt" /opt/core-settings.json
+			echo  "Copied $opt"
+			break
+
+		else
+			echo "Invalid option"
+		fi
+	done
+fi
+
 sudo docker pull olzzon/tv-automation-server-core:$TAG
 if [ $? -ne 0 ]; then
 	echo "Failed to pull image. Aborting"
