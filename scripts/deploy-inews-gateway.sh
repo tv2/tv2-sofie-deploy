@@ -3,7 +3,7 @@ source set-environment.sh
 
 read -e -p "Tag to deploy: " -i "develop" TAG
 
-sudo docker pull olzzon/tv2-inews-ftp-gateway:$TAG
+sudo docker pull tv2media/tv2-inews-ftp-gateway:$TAG
 if [ $? -ne 0 ]; then
 	echo "Failed to pull image. Aborting"
 	exit $?
@@ -21,7 +21,7 @@ sudo docker run --name=inews-gateway \
 	-e 'CORE_PORT=80' \
 	-e "DEVICE_ID=$HOSTNAME" \
 	-e "DEVICE_TOKEN=$DEVICE_TOKEN" \
-	olzzon/tv2-inews-ftp-gateway:$TAG
+	tv2media/tv2-inews-ftp-gateway:$TAG
 if [ $? -ne 0 ]; then
         echo "Failed to run new image. inews-gateway is likely not running"
         exit $?
