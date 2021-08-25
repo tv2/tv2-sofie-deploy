@@ -48,7 +48,7 @@ sudo docker exec -it mongo mongo --eval "rs.initiate()"
 ### Setup blueprints deployment:
 ```
 cd scripts
-git clone https://github.com/tv2/tv2-sofie-blueprints-inews.git
+git clone https://github.com/olzzon/tv2-sofie-blueprints-inews.git
 cd tv2-sofie-blueprints-inews
 yarn
 ```

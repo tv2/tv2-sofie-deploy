@@ -3,7 +3,7 @@ source set-environment.sh
 
 read -e -p "Tag to deploy: " -i "develop" TAG
 
-sudo docker pull tv2/sisyfos-audio-controller:$TAG
+sudo docker pull olzzon/sisyfos-audio-controller:$TAG
 if [ $? -ne 0 ]; then
 	echo "Failed to pull image. Aborting"
 	exit $?
@@ -23,7 +23,7 @@ sudo docker run --name=sisyfos \
 	-p 5255:5255/udp \
 	--network=$NETWORK_NAME \
 	--restart always -d \
-	tv2/sisyfos-audio-controller:$TAG
+	olzzon/sisyfos-audio-controller:$TAG
 if [ $? -ne 0 ]; then
         echo "Failed to run new image. Sisyfos is likely not running"
         exit $?

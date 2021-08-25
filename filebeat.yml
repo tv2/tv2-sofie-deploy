@@ -16,7 +16,7 @@ filebeat.autodiscover:
       templates:
         - condition:
             contains:
-              docker.container.image: tv2
+              docker.container.image: olzzon
           config:
             - type: container
               fields:

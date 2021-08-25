@@ -24,7 +24,7 @@ if [[ $DEPLOY_JSON == y* ]] || [[ $DEPLOY_JSON == Y* ]]; then
 	done
 fi
 
-sudo docker pull tv2/tv-automation-server-core:$TAG
+sudo docker pull olzzon/tv-automation-server-core:$TAG
 if [ $? -ne 0 ]; then
 	echo "Failed to pull image. Aborting"
 	exit $?
@@ -49,7 +49,7 @@ sudo docker run --name=server-core \
 	-e "NTP_SERVERS=$NTP_SERVERS" \
 	-e 'PORT=80' \
 	-e 'HTTP_FORWARDED_COUNT=1' \
-	tv2/tv-automation-server-core:$TAG
+	olzzon/tv-automation-server-core:$TAG
 if [ $? -ne 0 ]; then
         echo "Failed to run new image. Sofie is likely not running"
         exit $?
